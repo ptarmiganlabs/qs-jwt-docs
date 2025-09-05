@@ -4,7 +4,7 @@ import { defineConfig } from "vitepress";
 export default defineConfig({
   title: "QS-JWT",
   description: "Easily create Qlik Sense JWTs",
-  base: "/qs-jwt-docs/",
+  base: "/",
 
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
