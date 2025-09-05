@@ -16,35 +16,42 @@ A rule that gives access to a specific stream for all JWTs where the `group` cla
 When you create a JWT using qs-jwt, the following claims are available in security rules:
 
 ### Standard Claims
+
 - `user.environment.userId` - The user ID from `--userid`
 - `user.environment.userDirectory` - The user directory from `--userdir`
 - `user.environment.name` - The display name from `--username`
 - `user.environment.email` - The email address from `--useremail`
 
 ### Group Claims
+
 Groups specified with `--groups` are available as arrays:
+
 - `user.environment.group` - Array of all groups
 
 ### Example Security Rule Conditions
 
 #### Grant access based on user directory
+
 ```javascript
-user.environment.userDirectory = "COMPANY"
+user.environment.userDirectory = "COMPANY";
 ```
 
 #### Grant access based on group membership
+
 ```javascript
-user.environment.group.indexOf("admin") >= 0
+user.environment.group.indexOf("admin") >= 0;
 ```
 
 #### Grant access based on email domain
+
 ```javascript
-user.environment.email.indexOf("@company.com") >= 0
+user.environment.email.indexOf("@company.com") >= 0;
 ```
 
 #### Complex rule combining multiple claims
+
 ```javascript
-(user.environment.userDirectory = "COMPANY" and user.environment.group.indexOf("power-users") >= 0) 
+(user.environment.userDirectory = "COMPANY" and user.environment.group.indexOf("power-users") >= 0)
 or user.environment.group.indexOf("admin") >= 0
 ```
 
@@ -53,35 +60,39 @@ or user.environment.group.indexOf("admin") >= 0
 JWT claims can be used in various types of security rules:
 
 ### Stream Access
+
 Control which streams users can access based on JWT claims.
 
 ### App Access
+
 Grant or deny access to specific applications.
 
-### Data Reduction
-Filter data based on user attributes in the JWT.
-
 ### System Access
+
 Control access to QMC, Hub, or other system components.
 
 ## Best Practices
 
 ### Principle of Least Privilege
+
 - Only include necessary claims in JWTs
 - Design security rules to grant minimal required access
 - Regularly review and update security rules
 
 ### Group-Based Access
+
 - Use groups rather than individual user IDs where possible
 - Maintain consistent group naming conventions
 - Document group purposes and access levels
 
 ### Testing Security Rules
+
 - Test security rules with different JWT configurations
 - Verify that rules work as expected in development before deploying
 - Document security rule logic and dependencies
 
 ### JWT Claim Design
+
 - Use meaningful group names that reflect organizational structure
 - Include role-based claims when appropriate
 - Consider future scalability when designing claim structure
@@ -105,12 +116,14 @@ Control access to QMC, Hub, or other system components.
 ## Security Considerations
 
 ### JWT Security
+
 - JWTs contain unencrypted data - treat them as credentials
 - Use short expiration times to limit exposure
 - Rotate signing certificates regularly
 - Never include sensitive data in JWT claims
 
 ### Security Rule Security
+
 - Regularly audit security rules for correctness
 - Test security rules thoroughly before deploying
 - Maintain documentation of security rule logic

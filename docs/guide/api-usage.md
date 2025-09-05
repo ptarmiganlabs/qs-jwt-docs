@@ -23,16 +23,17 @@ curl "https://qliksense.some.company.com/jwt/qrs/about?Xrfkey=abcdefghij123456" 
 ```
 
 Response:
+
 ```json
 {
-  "buildVersion":"30.4.0.0",
-  "buildDate":"10/8/2021 12:43:37 PM",
-  "databaseProvider":"Devart.Data.PostgreSql",
-  "nodeType":1,
-  "sharedPersistence":true,
-  "requiresBootstrap":false,
-  "singleNodeOnly":false,
-  "schemaPath":"About"
+  "buildVersion": "30.4.0.0",
+  "buildDate": "10/8/2021 12:43:37 PM",
+  "databaseProvider": "Devart.Data.PostgreSql",
+  "nodeType": 1,
+  "sharedPersistence": true,
+  "requiresBootstrap": false,
+  "singleNodeOnly": false,
+  "schemaPath": "About"
 }
 ```
 
@@ -69,32 +70,45 @@ curl "https://<your-tenant>.eu.qlikcloud.com/api/v1/spaces" -b cookies.txt
 ```
 
 Response:
+
 ```json
 {
-  "data":[
+  "data": [
     {
-      "id":"619516<removed>bedb",
-      "type":"managed",
-      "ownerId":"2jG2t<removed>SgXmj3",
-      "tenantId":"Ev1d<removed>N7OO",
-      "name":"ChargeAmps EV charging",
-      "description":"Metrics from an 18-node charging network for electrical vehicles.",
-      "meta":{
-        "actions":["create","read","update","delete","publish"],
-        "roles":[],
-        "assignableRoles":["consumer","contributor","dataconsumer","facilitator","publisher"]
+      "id": "619516<removed>bedb",
+      "type": "managed",
+      "ownerId": "2jG2t<removed>SgXmj3",
+      "tenantId": "Ev1d<removed>N7OO",
+      "name": "ChargeAmps EV charging",
+      "description": "Metrics from an 18-node charging network for electrical vehicles.",
+      "meta": {
+        "actions": ["create", "read", "update", "delete", "publish"],
+        "roles": [],
+        "assignableRoles": [
+          "consumer",
+          "contributor",
+          "dataconsumer",
+          "facilitator",
+          "publisher"
+        ]
       },
-      "links":{
-        "self":{"href":"https://<removed>.eu.qlikcloud.com/api/v1/spaces/619<removed>bedb"},
-        "assignments":{"href":"https://<removed>.eu.qlikcloud.com/api/v1/spaces/6195<removed>edb/assignments"}
+      "links": {
+        "self": {
+          "href": "https://<removed>.eu.qlikcloud.com/api/v1/spaces/619<removed>bedb"
+        },
+        "assignments": {
+          "href": "https://<removed>.eu.qlikcloud.com/api/v1/spaces/6195<removed>edb/assignments"
+        }
       },
-      "createdAt":"2021-11-17T14:50:03.619Z",
-      "createdBy":"2jG2t<removed>gXmj3",
-      "updatedAt":"2021-11-17T14:50:16.715Z"
+      "createdAt": "2021-11-17T14:50:03.619Z",
+      "createdBy": "2jG2t<removed>gXmj3",
+      "updatedAt": "2021-11-17T14:50:16.715Z"
     }
   ],
-  "meta":{"count":1},
-  "links":{"self":{"href":"https://<removed>.eu.qlikcloud.com/api/v1/spaces"}}
+  "meta": { "count": 1 },
+  "links": {
+    "self": { "href": "https://<removed>.eu.qlikcloud.com/api/v1/spaces" }
+  }
 }
 ```
 
@@ -109,17 +123,20 @@ Response:
 ## Best Practices
 
 ### Security
+
 - Always use HTTPS when making API calls with JWTs
 - Keep JWT expiration times short (hours or days, not months)
 - Store private keys securely and never commit them to source control
 - Rotate certificates and keys regularly
 
 ### Error Handling
+
 - Check for HTTP status codes in your API calls
 - Handle JWT expiration gracefully by creating new JWTs
 - Validate that your JWT audience/issuer settings match your Qlik configuration
 
 ### Automation
+
 - Store JWTs in environment variables or secure storage systems
 - Use CI/CD systems that can securely handle certificates and keys
 - Consider using certificate management systems for production deployments

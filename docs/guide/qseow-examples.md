@@ -5,6 +5,7 @@ This page shows detailed examples for creating JWTs for Qlik Sense Enterprise on
 ## Prerequisites
 
 Before using JWTs with QSEoW, you need:
+
 1. A virtual proxy configured for JWT authentication
 2. A certificate/private key pair (or let qs-jwt create one)
 3. The audience value from your virtual proxy configuration
@@ -33,6 +34,7 @@ openssl req -new -x509 -key privatekey.pem -out publickey.cer -days 1825
 ### Running qs-jwt on macOS
 
 This example will:
+
 - Create a JWT for Qlik Sense Enterprise on Windows (the `create-qseow` command)
 - Create a JWT for user `anna` in Sense userdirectory `GRUSGRUS`. "Grusgrus" is a fictitious company
 - The JWT will expire in 365 days
@@ -85,6 +87,7 @@ qs-jwt.exe create-qseow \
 ### Running qs-jwt on macOS
 
 This example will:
+
 - Set the environment variable `QSJWTPRIVKEY` to the contents of the private key in `privatekey.pem` file
 - Create a JWT for Qlik Sense Enterprise on Windows (the `create-qseow` command)
 - Create a JWT for user `anna` in Sense userdirectory `GRUSGRUS`. Grusgrus is a fictitious company
@@ -152,6 +155,7 @@ An optional prefix can be added to the file names, this is done by using the `--
 ### Running qs-jwt on macOS
 
 This example will:
+
 - Create a JWT for Qlik Sense Enterprise on Windows (the `create-qseow` command)
 - Create a JWT for user `anna` in Sense userdirectory `GRUSGRUS`. Grusgrus is a fictitious company
 - The JWT will expire in 365 days

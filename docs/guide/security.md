@@ -67,18 +67,21 @@ Key security points about JWTs:
 ### Best Practices
 
 #### JWT Handling
+
 - **Use HTTPS**: Always transmit JWTs over encrypted connections
 - **Short Expiration**: Keep JWT validity periods short (hours/days, not months)
 - **Secure Storage**: Store JWTs securely, never in plain text files or logs
 - **Minimal Claims**: Only include necessary information in JWT claims
 
 #### Certificate Management
+
 - **Protect Private Keys**: Never commit private keys to source control
 - **Key Rotation**: Rotate signing certificates regularly
 - **Key Storage**: Use secure key management systems in production
 - **Access Control**: Limit who can access signing keys
 
 #### Operational Security
+
 - **Monitoring**: Monitor JWT usage and expiration
 - **Logging**: Be careful about what JWT-related information is logged
 - **Environment Separation**: Use different certificates for different environments
@@ -87,17 +90,20 @@ Key security points about JWTs:
 ## Development Security
 
 ### Source Code
+
 - All source code is available on [GitHub](https://github.com/ptarmiganlabs/qs-jwt)
 - Code is regularly reviewed and updated
 - Community contributions are welcome and reviewed
 - Issues and security concerns can be reported through GitHub
 
 ### Dependencies
+
 - qs-jwt uses well-established, maintained libraries
 - Dependencies are regularly updated for security patches
 - Dependency scanning is performed as part of the build process
 
 ### Build Process
+
 - Builds are automated and reproducible
 - Binary artifacts are scanned before release
 - Release process includes security checks
@@ -105,18 +111,21 @@ Key security points about JWTs:
 ## Compliance Considerations
 
 ### Data Privacy
+
 - JWTs may contain personal information (names, emails)
 - Consider GDPR, CCPA, and other privacy regulations
 - Implement appropriate data handling procedures
 - Document JWT data flows and retention policies
 
 ### Audit Requirements
+
 - Log JWT creation and usage events
 - Maintain records of certificate management
 - Document security procedures and policies
 - Regular security reviews and updates
 
 ### Industry Standards
+
 - Follow JWT best practices (RFC 7519)
 - Implement proper certificate management
 - Use appropriate cryptographic standards
@@ -125,26 +134,31 @@ Key security points about JWTs:
 ## Security Resources
 
 ### Qlik Security
+
 - [Qlik Sense Security Documentation](https://help.qlik.com/en-US/sense-admin/February2022/Subsystems/DeployAdministerQSE/Content/Sense_DeployAdminister/QSEoW/Administer_QSEoW/Managing_QSEoW/JWT-authentication.htm)
 - [Qlik Cloud Security](https://help.qlik.com/en-US/cloud-services/Subsystems/Hub/Content/Sense_Hub/Admin/SaaS-admin-mc.htm)
 
 ### JWT Security
+
 - [JWT Best Practices](https://tools.ietf.org/html/rfc8725)
 - [JWT.io Security Considerations](https://jwt.io/introduction/)
 - [OWASP JWT Security Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/JSON_Web_Token_for_Java_Cheat_Sheet.html)
 
 ### General Security
+
 - [NIST Cybersecurity Framework](https://www.nist.gov/cyberframework)
 - [OWASP Top 10](https://owasp.org/www-project-top-ten/)
 
 ## Reporting Issues
 
 ### Security Issues
+
 - **Critical security issues**: Email security@ptarmiganlabs.com
 - **General security questions**: Use GitHub Discussions
 - **Non-security bugs**: Use GitHub Issues
 
 ### Response Process
+
 1. **Assessment**: Security reports are assessed within 48 hours
 2. **Investigation**: Detailed investigation of confirmed issues
 3. **Fix Development**: Patches developed and tested

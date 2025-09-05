@@ -4,11 +4,11 @@ layout: home
 
 hero:
   name: "QS-JWT"
-  text: "Documentation"
+  # text: "Documentation"
   tagline: Easily create Qlik Sense JWTs
-  image:
-    src: https://img.shields.io/badge/Source---
-    alt: QS-JWT
+  # image:
+  #   src: https://img.shields.io/badge/Source---
+  #   alt: QS-JWT
   actions:
     - theme: brand
       text: Get Started
@@ -47,7 +47,10 @@ A cross platform, command line tool for creating JWTs (=JSON Web Tokens) that ca
 
 qs-jwt nicely complements the more operationally focused open source tools in the [Butler family](https://github.com/ptarmiganlabs). Those tools focus on things such as real-time monitoring of client-managed Qlik Sense environments, flexible and powerful alerts/notifications when reloads fail, automatically creating sheet thumbnails and much more.
 
+## Open Source
+
+qs-jwt is open source software released under the MIT License. You can find the source code on [GitHub](https://github.com/ptarmiganlabs/qs-jwt).
+
 ## Sponsored by Ptarmigan Labs
 
 qs-jwt is sponsored by Ptarmigan Labs, a Swedish consulting company specialising in advanced Qlik Sense development. More info at [ptarmiganlabs.com](https://ptarmiganlabs.com) where you can also [sign up for the newsletter](https://ptarmiganlabs.com/#/portal/signup) that will give all Qlik related updates straight to your inbox.
-
