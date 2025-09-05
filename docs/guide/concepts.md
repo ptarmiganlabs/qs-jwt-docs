@@ -19,10 +19,11 @@ Claims may sound like a strange term for this, but you can think of it as metada
 
 There are a couple of things to consider when creating JWTs for Qlik Sense:
 
--   Will the JWT be used with client-managed Qlik Sense (=Qlik Sense Enterprise on Windows, QSEoW) or with Qlik Sense cloud? These use JWTs with slightly different structure inside.
--   Do you already have a certificate/private key, or do you need to create those first?
+- Will the JWT be used with client-managed Qlik Sense (=Qlik Sense Enterprise on Windows, QSEoW) or with Qlik Sense cloud? These use JWTs with slightly different structure inside.
+- Do you already have a certificate/private key, or do you need to create those first?
 
-Both points above are supported and handled by qs-jwt:  
+Both points above are supported and handled by qs-jwt:
+
 qs-jwt supports creating JWTs for both QSEoW and Qlik Sense Cloud and qs-jwt can either use an existing certificate/key or create new ones.
 
 ### Certificate Handling Options
@@ -38,15 +39,17 @@ qs-jwt provides three ways to handle certificates and private keys:
 qs-jwt can create JWTs for two different Qlik Sense platforms:
 
 #### QSEoW (Qlik Sense Enterprise on Windows)
+
 - Uses `create-qseow` command
 - Requires user directory and user ID
 - Supports rich claims for security rules
 - Used with virtual proxy configurations
 
 #### Qlik Sense Cloud
-- Uses `create-qscloud` command  
+
+- Uses `create-qscloud` command
 - Requires issuer and key ID configuration
-- Uses different claim structure
+- Uses different claim structure than QSEoW
 - Integrates with cloud identity providers
 
 The different use cases are described in detail in the [examples section](/guide/examples).

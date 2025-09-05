@@ -10,16 +10,17 @@ Make sure to check for new versions (and star the [GitHub repositry](https://git
 ## Download
 
 1. Go to the [releases page](https://github.com/ptarmiganlabs/qs-jwt/releases)
-2. Download the appropriate binary for your operating system:
-   - **Windows**: `qs-jwt-win.exe`
-   - **macOS**: `qs-jwt-macos`
-   - **Linux**: `qs-jwt-linux`
+2. Download the appropriate binary for your operating system. Windows, macOS and Linux supported.
+
+::: info macOS
+Currently (August 2025) only a macOS x64 binary is available, Apple Silicon (arm64) version coming.
+:::
 
 ## Platform-specific Notes
 
 ### Windows
 
-::: warning Important
+::: warning Windows operating systems
 Don't forget to unblock the downloaded qs-jwt ZIP file before unzipping it.  
 Failing to unblock it may prevent proper execution of qs-jwt.exe.
 

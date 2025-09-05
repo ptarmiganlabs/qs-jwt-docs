@@ -30,33 +30,24 @@ Create a JWT for use with client-managed Qlik Sense (Qlik Sense Enterprise on Wi
 [View detailed documentation →](/guide/create-qseow)
 
 **Key features:**
+
 - User directory and user ID specification
 - Support for groups and user metadata
 - Audience field for virtual proxy matching
 - Security rule integration
 
-## create-qscloud  
+## create-qscloud
 
 Create a JWT for use with Qlik Sense Cloud.
 
 [View detailed documentation →](/guide/create-qscloud)
 
 **Key features:**
+
 - Issuer and Key ID configuration
 - Email verification claims
 - Cloud identity provider integration
 - Different claim structure optimized for cloud use
-
-## Common Options
-
-Both commands share several common options:
-
-- `--loglevel`: Control logging verbosity
-- `--expires`: Set JWT expiration time
-- `--cert-privatekey-file`: Use existing private key file
-- `--cert-privatekey`: Pass private key as parameter
-- `--cert-create`: Create new certificate and key pair
-- `--groups`: Specify user groups
 
 ## Getting Help
 
@@ -67,6 +58,7 @@ qs-jwt <command> --help
 ```
 
 For example:
+
 ```bash
 qs-jwt create-qseow --help
 qs-jwt create-qscloud --help

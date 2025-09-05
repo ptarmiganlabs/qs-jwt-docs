@@ -38,23 +38,30 @@ Options:
 ## Required Options
 
 - `--useremail`: The user's email address (used as primary identifier)
+- `--useremail-verified`: Claim indicating email ownership verification
+- `--username`: The user's name
 - `--issuer`: Must match the issuer configured in the Qlik Sense Cloud JWT IdP
 - `--keyid`: Must match the Key ID configured in the Qlik Sense Cloud JWT IdP
+- `--expires`: The expiration time for the JWT. Examples: 60m (60 minutes), 48h (48 hours), 365d (365 days), 5y (5 years).
 
 ## Key Features
 
 ### User Identity
+
 - **Email**: Primary user identifier in Qlik Sense Cloud
 - **Email Verified**: Boolean claim indicating email ownership verification
 - **User Name**: Human-readable display name
 
 ### Cloud Integration
+
 - **Issuer**: Identifies the JWT issuer, must match cloud IdP configuration
 - **Key ID**: Identifies which key was used to sign the JWT
 - **Groups**: User group memberships for access control
 
 ### Certificate Handling
+
 Three options for handling certificates:
+
 1. Use existing private key file (`--cert-privatekey-file`)
 2. Pass private key as parameter (`--cert-privatekey`)
 3. Create new certificate and key (`--cert-create true`)

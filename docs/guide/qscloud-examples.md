@@ -5,6 +5,7 @@ This page shows detailed examples for creating JWTs for Qlik Sense Cloud.
 ## Prerequisites
 
 Before using JWTs with Qlik Sense Cloud, you need:
+
 1. A JWT Identity Provider configured in your Qlik Cloud tenant
 2. A certificate/private key pair (or let qs-jwt create one)
 3. The issuer and key ID values from your JWT IdP configuration
@@ -20,6 +21,7 @@ The concept is identical to using QSEoW, but adapted for QS Cloud requirements.
 ### Running qs-jwt on macOS
 
 This example will:
+
 - Create a JWT for Qlik Sense Cloud (the `create-qscloud` command)
 - The JWT will expire in 365 days
 - The private key in file `privatekey.pem` will be used to sign the JWT
@@ -72,6 +74,7 @@ Same concept as for QSEoW, but adapted for QS Cloud.
 ### Running qs-jwt on macOS
 
 This example will:
+
 - Set the environment variable `QSJWTPRIVKEY` to the contents of the private key in `privatekey.pem` file
 - Create a JWT for Qlik Sense Cloud (the `create-qscloud` command)
 - The JWT will expire in 365 days
@@ -138,6 +141,7 @@ An optional prefix can be added to the file names, this is done by using the `--
 ### Running qs-jwt on macOS
 
 This example will:
+
 - Create a JWT for Qlik Sense Cloud (the `create-qscloud` command)
 - The JWT will expire in 365 days
 - A new private/public key pair will be created, as well as a new certificate based on that private key

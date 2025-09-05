@@ -29,28 +29,35 @@ Use the `--loglevel` option with any command:
 ## Log Level Details
 
 ### error
+
 Only critical errors that prevent JWT creation are logged.
 
 **Use when:**
+
 - Running in production with minimal logging
 - Only need to know about failures
 
 ### warning
+
 Errors and warnings about potential issues are logged.
 
 **Use when:**
+
 - You want to be notified of potential problems
 - Running automated scripts
 
 ### info (default)
+
 General information about the JWT creation process.
 
 **Use when:**
+
 - Normal operation
 - You want to see what qs-jwt is doing
 - Basic troubleshooting
 
 **Example output:**
+
 ```
 [INFO] Creating JWT for QSEoW
 [INFO] User: anna@GRUSGRUS
@@ -60,14 +67,17 @@ General information about the JWT creation process.
 ```
 
 ### verbose
+
 Detailed information about each step of the process.
 
 **Use when:**
+
 - Debugging configuration issues
 - Understanding the JWT creation process
 - Verifying certificate handling
 
 **Example output:**
+
 ```
 [INFO] Creating JWT for QSEoW
 [VERBOSE] Reading private key from file: privatekey.pem
@@ -85,9 +95,11 @@ Detailed information about each step of the process.
 ```
 
 ### debug
+
 Very detailed logging including internal operations and data structures.
 
 **Use when:**
+
 - Developing or debugging qs-jwt
 - Investigating complex issues
 - Contributing to the project
@@ -97,21 +109,25 @@ Very detailed logging including internal operations and data structures.
 ## Best Practices
 
 ### Production Environments
+
 - Use `error` or `warning` level in production
 - Monitor logs for certificate expiration warnings
 - Set up alerting for error-level events
 
 ### Development and Testing
+
 - Use `info` or `verbose` level during development
 - Use `debug` level when troubleshooting specific issues
 - Review logs to understand JWT creation process
 
 ### Automation and CI/CD
+
 - Use `warning` level in automated scripts
 - Capture and review logs for failed builds
 - Consider log retention policies for compliance
 
 ### Security Considerations
+
 - Be aware that higher log levels may include sensitive information
 - Secure log files and transmission
 - Consider log rotation and retention policies
@@ -122,6 +138,7 @@ Very detailed logging including internal operations and data structures.
 ### Common Issues and Log Messages
 
 #### Certificate/Key Issues
+
 ```
 [ERROR] Failed to read private key file: permission denied
 [ERROR] Invalid private key format
@@ -129,12 +146,14 @@ Very detailed logging including internal operations and data structures.
 ```
 
 #### Configuration Issues
+
 ```
 [ERROR] Missing required parameter: --userdir
 [WARNING] Group name contains special characters: "group with spaces"
 ```
 
 #### JWT Creation Issues
+
 ```
 [ERROR] Failed to sign JWT: invalid key
 [DEBUG] JWT payload: {"userId":"test","exp":1234567890}
@@ -173,6 +192,7 @@ Redirect logs to files for analysis:
 ## Integration with Monitoring Systems
 
 ### Structured Logging
+
 For integration with log aggregation systems, consider parsing qs-jwt output:
 
 ```bash
@@ -183,12 +203,15 @@ done
 ```
 
 ### Exit Codes
+
 qs-jwt returns appropriate exit codes that can be monitored:
+
 - `0`: Success
 - `1`: General error
 - `2`: Invalid parameters
 
 Use exit codes in scripts:
+
 ```bash
 if ! ./qs-jwt create-qseow [options...]; then
   echo "JWT creation failed with exit code $?"

@@ -34,14 +34,18 @@ This page provides an overview of examples for using qs-jwt with both QSEoW and 
 Choose your Qlik Sense platform for detailed examples:
 
 ### [QSEoW Examples](/guide/qseow-examples)
+
 Complete examples for Qlik Sense Enterprise on Windows including:
+
 - Using existing private key files
-- Passing private keys as parameters  
+- Passing private keys as parameters
 - Creating new certificates
 - Examples for macOS, Windows, and Linux
 
 ### [QS Cloud Examples](/guide/qscloud-examples)
+
 Complete examples for Qlik Sense Cloud including:
+
 - JWT IdP configuration
 - Using existing private key files
 - Passing private keys as parameters
@@ -49,7 +53,9 @@ Complete examples for Qlik Sense Cloud including:
 - Examples for macOS, Windows, and Linux
 
 ### [API Usage Examples](/guide/api-usage)
+
 How to use the created JWTs with Qlik Sense APIs:
+
 - QSEoW Repository Service (QRS) API calls
 - Qlik Sense Cloud API authentication
 - PowerShell and curl examples
@@ -57,6 +63,7 @@ How to use the created JWTs with Qlik Sense APIs:
 ## Common Patterns
 
 ### Certificate Creation
+
 If you don't have existing certificates, qs-jwt can create them:
 
 ```bash
@@ -69,6 +76,7 @@ If you don't have existing certificates, qs-jwt can create them:
 ```
 
 ### Environment Variables
+
 Store sensitive information like private keys in environment variables:
 
 ```bash
@@ -82,6 +90,7 @@ export PRIVATE_KEY=$(cat private-key.pem)
 ```
 
 ### Group Assignments
+
 Add users to multiple groups:
 
 ```bash
@@ -93,5 +102,5 @@ Add users to multiple groups:
 ## Next Steps
 
 - [View QSEoW detailed examples](/guide/qseow-examples)
-- [View QS Cloud detailed examples](/guide/qscloud-examples)  
+- [View QS Cloud detailed examples](/guide/qscloud-examples)
 - [Learn about API usage](/guide/api-usage)
