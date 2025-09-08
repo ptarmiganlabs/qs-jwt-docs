@@ -21,6 +21,7 @@
   "license": "MIT",
   "devDependencies": {
     "gh-pages": "^6.3.0",
+    "ufo": "^1.6.1",
     "vitepress": "^1.6.4"
   },
   "repository": {
