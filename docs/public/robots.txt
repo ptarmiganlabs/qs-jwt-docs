@@ -1,0 +1,5 @@
+# robots.txt for qs-jwt docs
+User-agent: *
+Allow: /
+
+Sitemap: https://qs-jwt.ptarmiganlabs.com/sitemap.xml

@@ -1,6 +1,9 @@
 import { joinURL, withoutTrailingSlash } from "ufo";
 import { defineConfig } from "vitepress";
 
+// Generated at build time by scripts/fetch-qsjwt-version.mjs
+import { version as qsJwtVersion } from "./version.js";
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "QS-JWT",
@@ -13,7 +16,7 @@ export default defineConfig({
   },
 
   head: [
-    ["link", { rel: "icon", href: "/favicon.ico" }],
+    // ["link", { rel: "icon", href: "/favicon.ico" }],
     ["meta", { property: "og:type", content: "website" }],
     ["meta", { property: "og:title", content: "QS-JWT Documentation" }],
     [
@@ -47,6 +50,23 @@ export default defineConfig({
       { text: "Guide", link: "/guide/introduction" },
       { text: "Commands", link: "/guide/commands" },
       { text: "Examples", link: "/guide/examples" },
+      {
+        text: qsJwtVersion,
+        items: [
+          {
+            text: "Downloads",
+            link: "https://github.com/ptarmiganlabs/qs-jwt/releases",
+          },
+          {
+            text: "Changelog",
+            link: "https://github.com/ptarmiganlabs/qs-jwt/blob/main/CHANGELOG.md",
+          },
+          {
+            text: "GitHub",
+            link: "https://github.com/ptarmiganlabs/qs-jwt",
+          },
+        ],
+      },
     ],
 
     sidebar: [
