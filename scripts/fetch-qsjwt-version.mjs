@@ -1,5 +1,5 @@
 /**
- * Fetch latest Butler Sheet Icons release tag and write to docs/.vitepress/version.js
+ * Fetch latest qs-jwt release tag and write to docs/.vitepress/version.js
  * This runs before docs:dev and docs:build. If the request fails, we keep the last
  * generated file (if any) and continue, so docs still build.
  */
