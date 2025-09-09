@@ -16,7 +16,7 @@ export default defineConfig({
   },
 
   head: [
-    // ["link", { rel: "icon", href: "/favicon.ico" }],
+    ["link", { rel: "icon", href: "/favicon.ico" }],
     ["meta", { property: "og:type", content: "website" }],
     ["meta", { property: "og:title", content: "QS-JWT Documentation" }],
     [
@@ -58,12 +58,20 @@ export default defineConfig({
             link: "https://github.com/ptarmiganlabs/qs-jwt/releases",
           },
           {
+            text: "Issues",
+            link: "https://github.com/ptarmiganlabs/qs-jwt/issues",
+          },
+          {
+            text: "Discussions",
+            link: "https://github.com/ptarmiganlabs/qs-jwt/discussions",
+          },
+          {
             text: "Changelog",
             link: "https://github.com/ptarmiganlabs/qs-jwt/blob/main/CHANGELOG.md",
           },
           {
-            text: "GitHub",
-            link: "https://github.com/ptarmiganlabs/qs-jwt",
+            text: "Ptarmigan Labs main site",
+            link: "https://ptarmiganlabs.com",
           },
         ],
       },
