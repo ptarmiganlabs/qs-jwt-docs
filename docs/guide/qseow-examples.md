@@ -67,14 +67,14 @@ Remember: Don't forget to unblock the downloaded qs-jwt ZIP file before unzippin
 Failing to unblock it may prevent proper execution of qs-jwt.exe.
 
 ```powershell
-qs-jwt.exe create-qseow \
-  --userdir GRUSGRUS \
-  --userid anna \
-  --username "Anna Anderson" \
-  --useremail "anna@grusgrus.com" \
-  --audience hdJh34wkK \
-  --cert-privatekey-file privatekey.pem \
-  --groups group1 "group 2" \
+qs-jwt.exe create-qseow `
+  --userdir GRUSGRUS `
+  --userid anna `
+  --username "Anna Anderson" `
+  --useremail "anna@grusgrus.com" `
+  --audience hdJh34wkK `
+  --cert-privatekey-file privatekey.pem `
+  --groups group1 "group 2" `
   --expires 365d
 ```
 
@@ -129,14 +129,14 @@ $QSJWTPRIVKEY = Get-Content .\privatekey.pem -Raw
 ```
 
 ```powershell
-.\qs-jwt.exe create-qseow \
-  --userdir GRUSGRUS \
-  --userid anna \
-  --username 'Anna Anderson' \
-  --useremail 'anna@grusgrus.com' \
-  --audience hdJh34wkK \
-  --cert-privatekey "$QSJWTPRIVKEY" \
-  --groups group1 'group 2' \
+.\qs-jwt.exe create-qseow `
+  --userdir GRUSGRUS `
+  --userid anna `
+  --username 'Anna Anderson' `
+  --useremail 'anna@grusgrus.com' `
+  --audience hdJh34wkK `
+  --cert-privatekey "$QSJWTPRIVKEY" `
+  --groups group1 'group 2' `
   --expires 365d
 ```
 
@@ -192,16 +192,16 @@ Here cmd.exe is used to run qs-jwt, PowerShell works equally well.
 Remember: Don't forget to unblock the downloaded qs-jwt ZIP file before unzipping it. Failing to unblock it may prevent proper execution of qs-jwt.exe.
 
 ```powershell
-.\qs-jwt.exe create-qseow \
-  --userdir GRUSGRUS \
-  --userid anna \
-  --username "Anna Anderson" \
-  --useremail "anna@grusgrus.com" \
-  --audience hdJh34wkK \
-  --cert-create true \
-  --cert-create-expires-days 400 \
-  --cert-file-prefix "qsjwt_" \
-  --groups group1 "group 2" \
+.\qs-jwt.exe create-qseow `
+  --userdir GRUSGRUS `
+  --userid anna `
+  --username "Anna Anderson" `
+  --useremail "anna@grusgrus.com" `
+  --audience hdJh34wkK `
+  --cert-create true `
+  --cert-create-expires-days 400 `
+  --cert-file-prefix "qsjwt_" `
+  --groups group1 "group 2" `
   --expires 365d
 ```
 

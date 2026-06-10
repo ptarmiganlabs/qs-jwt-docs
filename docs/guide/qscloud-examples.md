@@ -55,13 +55,13 @@ No groups are included in the JWT in this example.
 Remember: Don't forget to unblock the downloaded qs-jwt ZIP file before unzipping it. Failing to unblock it may prevent proper execution of qs-jwt.exe.
 
 ```powershell
-qs-jwt.exe create-qscloud \
-  --username "Anna Anderson" \
-  --useremail "anna@grusgrus.com" \
-  --useremail-verified true \
-  --issuer "<your-tenant>.eu.qlikcloud.com" \
-  --keyid "<your-key-id>" \
-  --expires 365d \
+qs-jwt.exe create-qscloud `
+  --username "Anna Anderson" `
+  --useremail "anna@grusgrus.com" `
+  --useremail-verified true `
+  --issuer "<your-tenant>.eu.qlikcloud.com" `
+  --keyid "<your-key-id>" `
+  --expires 365d `
   --cert-privatekey-file ./privatekey.pem
 ```
 
@@ -117,14 +117,14 @@ $QSJWTPRIVKEY = Get-Content .\privatekey.pem -Raw
 ```
 
 ```powershell
-.\qs-jwt.exe create-qscloud \
-  --username "Anna Anderson" \
-  --useremail "anna@grusgrus.com" \
-  --useremail-verified true \
-  --issuer "<your-tenant>.eu.qlikcloud.com" \
-  --keyid "<your-key-id>" \
-  --expires 365d \
-  --cert-privatekey "$QSJWTPRIVKEY" \
+.\qs-jwt.exe create-qscloud `
+  --username "Anna Anderson" `
+  --useremail "anna@grusgrus.com" `
+  --useremail-verified true `
+  --issuer "<your-tenant>.eu.qlikcloud.com" `
+  --keyid "<your-key-id>" `
+  --expires 365d `
+  --cert-privatekey "$QSJWTPRIVKEY" `
   --groups group1 "group 2"
 ```
 
@@ -179,16 +179,16 @@ Here cmd.exe is used to run qs-jwt, PowerShell works equally well.
 Remember: Don't forget to unblock the downloaded qs-jwt ZIP file before unzipping it. Failing to unblock it may prevent proper execution of qs-jwt.exe.
 
 ```powershell
-.\qs-jwt.exe create-qscloud \
-  --username "Anna Anderson" \
-  --useremail "anna@grusgrus.com" \
-  --useremail-verified true \
-  --issuer "<your-tenant>.eu.qlikcloud.com" \
-  --keyid "<your-key-id>" \
-  --expires 365d \
-  --cert-create true \
-  --cert-create-expires-days 400 \
-  --cert-file-prefix "qsjwt_" \
+.\qs-jwt.exe create-qscloud `
+  --username "Anna Anderson" `
+  --useremail "anna@grusgrus.com" `
+  --useremail-verified true `
+  --issuer "<your-tenant>.eu.qlikcloud.com" `
+  --keyid "<your-key-id>" `
+  --expires 365d `
+  --cert-create true `
+  --cert-create-expires-days 400 `
+  --cert-file-prefix "qsjwt_" `
   --groups group1 "group 2"
 ```
 
