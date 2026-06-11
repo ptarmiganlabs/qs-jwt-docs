@@ -6,9 +6,9 @@ hero:
   name: "QS-JWT"
   # text: "Documentation"
   tagline: Easily create Qlik Sense JWTs
-  # image:
-  #   src: https://img.shields.io/badge/Source---
-  #   alt: QS-JWT
+  image:
+    src: /logo/qs-jwt.png
+    alt: QS-JWT logo
   actions:
     - theme: brand
       text: Get Started
@@ -40,7 +40,7 @@ features:
     details: Virus scanned releases, signed binaries, and comprehensive security documentation.
     icon: 🛡️
   - title: Air-Gapped Ready
-    details: Works in fully disconnected environments with no Internet connection required.
+    details: Works in fully disconnected environments. No Internet connection required.
     icon: 📡
   - title: Decode & Verify
     details: Inspect JWT contents, check expiration, and optionally verify signatures against a public key.

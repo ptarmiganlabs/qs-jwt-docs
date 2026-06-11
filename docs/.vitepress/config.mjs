@@ -16,7 +16,11 @@ export default defineConfig({
   },
 
   head: [
-    ["link", { rel: "icon", href: "/favicon.ico" }],
+    ["link", { rel: "icon", href: "/favicon.ico", sizes: "any" }],
+    ["link", { rel: "icon", type: "image/png", sizes: "16x16", href: "/img/logo/favicon-16x16.png" }],
+    ["link", { rel: "icon", type: "image/png", sizes: "32x32", href: "/img/logo/favicon-32x32.png" }],
+    ["link", { rel: "icon", type: "image/png", sizes: "48x48", href: "/img/logo/favicon-48x48.png" }],
+    ["link", { rel: "apple-touch-icon", sizes: "180x180", href: "/img/logo/apple-touch-icon.png" }],
     ["meta", { property: "og:type", content: "website" }],
     ["meta", { property: "og:title", content: "QS-JWT Documentation" }],
     [
@@ -27,6 +31,12 @@ export default defineConfig({
       },
     ],
     ["meta", { property: "og:site_name", content: "QS-JWT" }],
+    ["meta", { property: "og:image", content: "https://qs-jwt.ptarmiganlabs.com/img/logo/qs-jwt-logo-horizontal-1200x630.png" }],
+    ["meta", { property: "og:image:alt", content: "QS-JWT logo" }],
+    ["meta", { name: "twitter:card", content: "summary_large_image" }],
+    ["meta", { name: "twitter:title", content: "QS-JWT Documentation" }],
+    ["meta", { name: "twitter:description", content: "Easily create Qlik Sense JWTs" }],
+    ["meta", { name: "twitter:image", content: "https://qs-jwt.ptarmiganlabs.com/img/logo/qs-jwt-logo-horizontal-1200x630.png" }],
 
     [
       "script",
@@ -44,6 +54,7 @@ export default defineConfig({
   ],
 
   themeConfig: {
+    logo: "/logo/qs-jwt.png",
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "Home", link: "/" },
