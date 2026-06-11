@@ -31,12 +31,12 @@ export default defineConfig({
       },
     ],
     ["meta", { property: "og:site_name", content: "QS-JWT" }],
-    ["meta", { property: "og:image", content: "https://qs-jwt.ptarmiganlabs.com/img/logo/qs-jwt-logo-horizontal-1200x630.png" }],
+    ["meta", { property: "og:image", content: "https://qs-jwt.ptarmiganlabs.com/img/logo/qs-jwt-social-1200x630.png" }],
     ["meta", { property: "og:image:alt", content: "QS-JWT logo" }],
     ["meta", { name: "twitter:card", content: "summary_large_image" }],
     ["meta", { name: "twitter:title", content: "QS-JWT Documentation" }],
     ["meta", { name: "twitter:description", content: "Easily create Qlik Sense JWTs" }],
-    ["meta", { name: "twitter:image", content: "https://qs-jwt.ptarmiganlabs.com/img/logo/qs-jwt-logo-horizontal-1200x630.png" }],
+    ["meta", { name: "twitter:image", content: "https://qs-jwt.ptarmiganlabs.com/img/logo/qs-jwt-social-1200x630.png" }],
 
     [
       "script",
