@@ -39,6 +39,15 @@ features:
   - title: Security Focused
     details: Virus scanned releases, signed binaries, and comprehensive security documentation.
     icon: 🛡️
+  - title: Air-Gapped Ready
+    details: Works in fully disconnected environments with no Internet connection required.
+    icon: 📡
+  - title: Decode & Verify
+    details: Inspect JWT contents, check expiration, and optionally verify signatures against a public key.
+    icon: 🔍
+  - title: Zero Dependencies
+    details: Single standalone binary with no runtime dependencies. Download and run — no Node.js, Python, or other runtimes needed.
+    icon: 📦
 ---
 
 ## About

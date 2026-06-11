@@ -7,9 +7,7 @@
     "pre:version": "node ./scripts/fetch-qsjwt-version.mjs",
     "docs:dev": "npm run pre:version && vitepress dev ./docs",
     "docs:build": "npm run pre:version && vitepress build ./docs",
-    "docs:preview": "npm run pre:version && vitepress preview ./docs",
-    "deploy": "npm run docs:build && gh-pages -d docs/.vitepress/dist",
-    "deploy:ci": "npm run docs:build"
+    "docs:preview": "npm run pre:version && vitepress preview ./docs"
   },
   "keywords": [
     "qlik-sense",
@@ -20,7 +18,6 @@
   "author": "Ptarmigan Labs",
   "license": "MIT",
   "devDependencies": {
-    "gh-pages": "^6.3.0",
     "ufo": "^1.6.1",
     "vitepress": "^1.6.4"
   },

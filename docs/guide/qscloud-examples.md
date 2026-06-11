@@ -194,6 +194,24 @@ Remember: Don't forget to unblock the downloaded qs-jwt ZIP file before unzippin
 
 ![qs-jwt running on Windows Server 2016, creating new cert and key](/img/qs-jwt-qscloud-winsrv2016-3.png)
 
+## Minimal JWT (without username and email)
+
+The `--username` and `--useremail` options are optional. If your integration only needs a stable user ID, you can create a JWT with just the core claims:
+
+```bash
+./qs-jwt create-qscloud \
+  --issuer my-jwt-idp \
+  --keyid my-key-id \
+  --expires 1h \
+  --cert-privatekey-file /path/to/private.pem
+```
+
+::: tip
+`--useremail-verified` is only needed when you also pass `--useremail`.
+:::
+
+This is useful for service accounts and automated integrations where display name and email are not available or not needed.
+
 ## Next Steps
 
 - [Learn how to use JWTs with QS Cloud APIs](/guide/api-usage#qlik-sense-cloud)

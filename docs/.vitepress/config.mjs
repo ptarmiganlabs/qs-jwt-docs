@@ -92,6 +92,7 @@ export default defineConfig({
           { text: "Commands Overview", link: "/guide/commands" },
           { text: "create-qseow", link: "/guide/create-qseow" },
           { text: "create-qscloud", link: "/guide/create-qscloud" },
+          { text: "decode", link: "/guide/decode" },
         ],
       },
       {
@@ -118,7 +119,7 @@ export default defineConfig({
 
     footer: {
       message: "Released under the MIT License.",
-      copyright: "Copyright © 2025 Ptarmigan Labs",
+      copyright: "Copyright © 2026 Ptarmigan Labs",
     },
 
     search: {

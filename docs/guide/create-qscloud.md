@@ -37,12 +37,19 @@ Options:
 
 ## Required Options
 
-- `--useremail`: The user's email address (used as primary identifier)
-- `--useremail-verified`: Claim indicating email ownership verification
-- `--username`: The user's name
 - `--issuer`: Must match the issuer configured in the Qlik Sense Cloud JWT IdP
 - `--keyid`: Must match the Key ID configured in the Qlik Sense Cloud JWT IdP
 - `--expires`: The expiration time for the JWT. Examples: 60m (60 minutes), 48h (48 hours), 365d (365 days), 5y (5 years).
+
+## Optional Options
+
+- `--useremail`: The user's email address (used as an identifier). If provided, it is included in the JWT
+- `--useremail-verified`: Claim indicating email ownership verification. Only needed when `--useremail` is also provided
+- `--username`: The user's name. If provided, it is included in the JWT
+
+::: tip Username and email are optional
+Some integrations only need a stable user ID and other core JWT claims. You can omit `--username` and `--useremail` when that information is not available or is managed elsewhere.
+:::
 
 ## Key Features
 

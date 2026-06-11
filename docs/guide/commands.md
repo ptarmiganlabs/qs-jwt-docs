@@ -17,11 +17,12 @@ Options:
 Commands:
   create-qseow [options]    Create a JWT for use with client-managed Qlik Sense (a.k.a Qlik Sense Enterprise on Windows).
   create-qscloud [options]  Create a JWT for use with Qlik Sense Cloud.
+  decode [options]          Decode a JWT and optionally verify its signature.
   help [command]            display help for command
 ➜  demo-dir➜  demo-dir
 ```
 
-qs-jwt provides two main commands for creating JWTs:
+qs-jwt provides the following commands:
 
 ## create-qseow
 
@@ -48,6 +49,20 @@ Create a JWT for use with Qlik Sense Cloud.
 - Email verification claims
 - Cloud identity provider integration
 - Different claim structure optimized for cloud use
+
+## decode
+
+Inspect the contents of a JWT and optionally verify its signature.
+
+[View detailed documentation →](/guide/decode)
+
+**Key features:**
+
+- Decode and display JWT header, payload, and signature info
+- Verify JWT signature against a public key
+- Verify audience claim matches expected value
+- JSON output mode for scripting and automation
+- Time-based validity checking (expiration, not-before)
 
 ## Getting Help
 

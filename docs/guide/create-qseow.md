@@ -39,10 +39,17 @@ Options:
 
 - `--userdir`: The user directory in Qlik Sense where the user belongs
 - `--userid`: The user ID within that directory
-- `--username`: The user's name
-- `--useremail`: The user's email address
 - `--expires`: The expiration time for the JWT. Examples: 60m (60 minutes), 48h (48 hours), 365d (365 days), 5y (5 years)
 - `--audience`: Must match the audience configured in the QSEoW virtual proxy
+
+## Optional Options
+
+- `--username`: The user's name. If provided, it is included in the JWT
+- `--useremail`: The user's email address. If provided, it is included in the JWT
+
+::: tip Username and email are optional
+Some integrations only need a stable user ID and other core JWT claims. You can omit `--username` and `--useremail` when that information is not available or is managed elsewhere.
+:::
 
 ## Key Features
 

@@ -207,6 +207,21 @@ Remember: Don't forget to unblock the downloaded qs-jwt ZIP file before unzippin
 
 ![qs-jwt running on Windows Server 2016, creating new cert and key](/img/qs-jwt-qseow-winsrv2016-3.png)
 
+## Minimal JWT (without username and email)
+
+The `--username` and `--useremail` options are optional. If your integration only needs a stable user ID, you can create a JWT with just the core claims:
+
+```bash
+./qs-jwt create-qseow \
+  --userdir MYDIR \
+  --userid service-account \
+  --audience my-proxy \
+  --expires 1h \
+  --cert-privatekey-file /path/to/private.pem
+```
+
+This is useful for service accounts and automated integrations where display name and email are not available or not needed.
+
 ## Next Steps
 
 - [Learn how to use JWTs with QSEoW APIs](/guide/api-usage#qseow-api-usage)

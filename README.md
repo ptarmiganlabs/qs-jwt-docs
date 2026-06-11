@@ -2,11 +2,11 @@
 
 Documentation site for [qs-jwt](https://github.com/ptarmiganlabs/qs-jwt) – a cross-platform CLI for creating JWTs (JSON Web Tokens) used to authenticate with Qlik Sense (Cloud & QSEoW).
 
-Primary site: <https://qs-jwt.ptarmiganlabs.com> (served via GitHub Pages).
+Primary site: <https://qs-jwt.ptarmiganlabs.com> (served via Cloudflare Pages).
 
 ## 📖 View Documentation
 
-Documentation for QS JWT can be found at [https://qs-jwt.ptarmiganlabs.com](https://qs-jwt.ptarmiganlabs.com), which redirects to [https://ptarmiganlabs.github.io/qs-jwt-docs/](https://ptarmiganlabs.github.io/qs-jwt-docs/).
+Documentation for QS JWT can be found at [https://qs-jwt.ptarmiganlabs.com](https://qs-jwt.ptarmiganlabs.com).
 
 ## ⚡ Quick Start
 
@@ -41,13 +41,12 @@ The version fetch script populates `docs/.vitepress/version.js` with the latest 
 | --------------------------------- | ------------------------------------------------------- |
 | `package.json`                    | Scripts and dependencies for building the docs site     |
 | `scripts/fetch-qsjwt-version.mjs` | Fetch latest release → `version.js` for UI display      |
-| `README_DEPLOY.md`                | Deployment + operational details (GitHub Pages)         |
-| `.github/workflows/deploy.yml`    | CI build + Pages deployment workflow                    |
-| `docs/.vitepress/config.js`       | VitePress site config (nav, sidebar, theme)             |
+| `README_DEPLOY.md`                | Deployment + operational details (Cloudflare Pages)     |
+| `docs/.vitepress/config.mjs`      | VitePress site config (nav, sidebar, theme)             |
 | `docs/.vitepress/version.js`      | Auto‑generated during build (git-ignored if applicable) |
 | `docs/index.md`                   | Landing page content                                    |
 | `docs/guide`                      | Guide section content                                   |
-| `docs/public/`                    | Static assets (favicon, images, CNAME, etc.)            |
+| `docs/public/`                    | Static assets (favicon, images, etc.)                   |
 
 ---
 
@@ -96,23 +95,21 @@ Focus areas include: certificate creation/management, platform differences, secu
 
 ## 🎨 Customization (Summary)
 
-Site theming, navigation, and analytics are defined in `docs/.vitepress/config.js`. Add custom CSS/components via standard VitePress extension points if/when needed.
+Site theming, navigation, and analytics are defined in `docs/.vitepress/config.mjs`. Add custom CSS/components via standard VitePress extension points if/when needed.
 
-## 🚀 Deployment (GitHub Pages)
+## 🚀 Deployment (Cloudflare Pages)
 
-Deployed via GitHub Pages using the workflow in `.github/workflows/deploy.yml` + standard `gh-pages` branch publishing.
+Deployed via Cloudflare Pages. Pushes to `main` trigger an automatic build and deploy.
 
 | Script                 | Purpose                                                 |
 | ---------------------- | ------------------------------------------------------- |
 | `npm run docs:dev`     | Start local dev server (runs version fetch first)       |
 | `npm run docs:build`   | Build static site (generates version file)              |
 | `npm run docs:preview` | Preview built site locally                              |
-| `npm run deploy`       | Build then publish `docs/.vitepress/dist` to `gh-pages` |
-| `npm run deploy:ci`    | Build only (used by Pages workflow)                     |
 
 The build step runs `scripts/fetch-qsjwt-version.mjs` which writes `docs/.vitepress/version.js` with the latest QS JWT release tag (fallback `v0.0.0` if API unavailable). Provide `GITHUB_TOKEN` locally to avoid GitHub API rate limiting.
 
-Full operational details (custom domain, env vars, troubleshooting) are in [README_DEPLOY.md](./README_DEPLOY.md). This repository intentionally only supports GitHub Pages for hosting.
+Full operational details (custom domain, env vars, troubleshooting) are in [README_DEPLOY.md](./README_DEPLOY.md).
 
 ## 🤝 Contributing (Docs)
 

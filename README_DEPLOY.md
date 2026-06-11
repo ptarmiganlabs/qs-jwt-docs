@@ -10,10 +10,8 @@ Developer-focused instructions for building and deploying the QS-JWT documentati
 | docs:dev     | Generate version file, start VitePress dev server                                     |
 | docs:build   | Generate version file, build static site into `docs/.vitepress/dist`                  |
 | docs:preview | Build then preview locally                                                            |
-| deploy       | Build then publish dist folder to `gh-pages` branch using `gh-pages` package          |
-| deploy:ci    | Build only (used by GitHub Pages workflow artifact upload)                            |
 
-`pre:version` is tolerant to API failures: falls back to existing file or `v0.0.0`. Provide `GITHUB_TOKEN` (or `GH_TOKEN`) locally to avoid rate limits. GitHub Actions job token is used automatically in CI.
+`pre:version` is tolerant to API failures: falls back to existing file or `v0.0.0`. Provide `GITHUB_TOKEN` (or `GH_TOKEN`) locally to avoid rate limits.
 
 Generated file example:
 
@@ -22,41 +20,29 @@ Generated file example:
 export const version = "v1.2.3";
 ```
 
-## Automated Deployment (GitHub Pages)
+## Automated Deployment (Cloudflare Pages)
 
-- Workflow: `.github/workflows/deploy.yml`.
-- Trigger: push to `main` or manual dispatch.
-- Pipeline: checkout → setup node → install (`npm ci`) → `npm run docs:build` (runs version fetch) → upload artifact → `actions/deploy-pages`.
-- Result: Site published to Pages (custom domain if CNAME present).
+- Trigger: push to `main`.
+- Cloudflare Pages builds and deploys automatically when changes are pushed to the `main` branch.
 
-One-time setup: Settings → Pages → Source = GitHub Actions. Add custom domain if desired.
+### Build Settings (Cloudflare Dashboard)
 
-## Manual Deployment (Local)
+| Setting          | Value                        |
+| ---------------- | ---------------------------- |
+| Build command    | `npm run docs:build`         |
+| Output directory | `docs/.vitepress/dist`       |
+| Node version     | 22                           |
+| Install command  | `npm ci`                     |
 
-One-time:
+### Custom Domain
 
-1. `npm install`
-2. (Optional) `export GITHUB_TOKEN=...`
+Custom domains are configured in the Cloudflare Pages dashboard:
 
-Deploy:
+1. Go to your Cloudflare Pages project → Custom domains
+2. Add your domain (e.g., `qs-jwt.ptarmiganlabs.com`)
+3. Cloudflare handles DNS and HTTPS automatically if the domain is on Cloudflare
 
-```bash
-npm run deploy
-```
-
-Pushes built `docs/.vitepress/dist` to `gh-pages` branch.
-
-Build only:
-
-```bash
-npm run docs:build
-```
-
-Preview build output:
-
-```bash
-npm run docs:preview
-```
+If the domain is managed outside Cloudflare, point a CNAME record to your Cloudflare Pages URL (e.g., `<project>.pages.dev`).
 
 ## Local Development
 
@@ -66,9 +52,12 @@ npm run docs:dev
 
 Hot reload, version file generated at start.
 
-## Custom Domain
+Build and preview locally:
 
-If using a custom domain, ensure `docs/public/CNAME` contains the domain (example already: `qs-jwt.ptarmiganlabs.com`). DNS: CNAME that domain → `ptarmiganlabs.github.io`. Enable HTTPS in Pages settings after certificate issuance.
+```bash
+npm run docs:build
+npm run docs:preview
+```
 
 ## Environment Variables
 
@@ -82,12 +71,10 @@ If using a custom domain, ensure `docs/public/CNAME` contains the domain (exampl
 | ---------------------- | ---------------------------------------------------------------------- |
 | Version shows v0.0.0   | Provide token; re-run build                                            |
 | Build fails            | `npm ci && npm run docs:build`; check image paths under `docs/public/` |
-| Pages not updating     | Inspect workflow logs; verify Pages source is GitHub Actions           |
-| 404 after first deploy | Wait a minute for Pages provisioning                                   |
+| Site not updating      | Check Cloudflare Pages build logs; verify `main` branch was pushed     |
 | Wrong asset paths      | Adjust `base` in VitePress config if hosted under a sub-path           |
 
 ## Maintenance
 
-1. Keep vitepress + gh-pages updated (Renovate handles automatically if enabled).
+1. Keep vitepress updated (Renovate handles automatically if enabled).
 2. Monitor upstream tag naming conventions; adjust normalization logic if needed.
-3. Review workflow permissions if repository security settings change.
