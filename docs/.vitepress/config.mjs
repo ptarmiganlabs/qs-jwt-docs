@@ -11,6 +11,7 @@ export default defineConfig({
   base: "/",
   lang: "en-US",
   cleanUrls: true,
+  lastUpdated: true,
   sitemap: {
     hostname: "https://qs-jwt.ptarmiganlabs.com",
   },
@@ -130,7 +131,7 @@ export default defineConfig({
 
     footer: {
       message: "Released under the MIT License.",
-      copyright: "Copyright © 2026 Ptarmigan Labs",
+      copyright: `Copyright © 2026–${new Date().getFullYear()} Ptarmigan Labs`,
     },
 
     search: {
@@ -140,8 +141,8 @@ export default defineConfig({
     lastUpdated: {
       text: "Updated at",
       formatOptions: {
-        dateStyle: "full",
-        timeStyle: "medium",
+        dateStyle: "long",
+        timeStyle: "short",
       },
     },
   },
