@@ -82,6 +82,10 @@ export default defineConfig({
             link: "https://github.com/ptarmiganlabs/qs-jwt/blob/main/CHANGELOG.md",
           },
           {
+            text: "qs-jwt at ptarmiganlabs.com",
+            link: "https://ptarmiganlabs.com/products/qs-jwt/",
+          },
+          {
             text: "Ptarmigan Labs main site",
             link: "https://ptarmiganlabs.com",
           },
